@@ -26,3 +26,17 @@ function myFunction(item) {
     }
 
 }
+var submit = d3.select("#submit");
+submit.on("click", function () {
+    // Prevent the page from refreshing
+    d3.event.preventDefault();
+
+    // Select the input element and get the raw HTML node and get value
+    inputDate = d3.select("#datetime").property("value");
+    inputCity = d3.select("#city").property("value");
+    inputState = d3.select("#state").property("value");
+    inputCountry = d3.select("#country").property("value");
+    inputShape = d3.select("#shape").property("value");
+
+    tableData.forEach(myFunction);
+});
